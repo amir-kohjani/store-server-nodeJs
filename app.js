@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 
-// const productRouter = require('./routers/productsRouter')
+const productRouter = require('./routers/productsRouter')
 
 
 //----------------Middlewares----------------------
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 connection();
 
 //--------------------------Routers----------------------------------------
-// app.use('/product',productRouter)
+app.use('/product',productRouter)
 
 //------------------Running Server------------------ -------
 app.listen(process.env.PORT || 4000, () => {
